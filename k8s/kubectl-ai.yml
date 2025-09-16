@@ -17,9 +17,7 @@ spec:
       - name: kubectl-ai
         image: us-central1-docker.pkg.dev/civil-epigram-471815-n0/gke/kubectl-ai:latest
         args:
-        - --ui-type=web
         - --mcp-server
-        - --mcp-listen=0.0.0.0:8080
         envFrom:
         - secretRef:
             name: kubectl-ai
