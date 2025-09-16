@@ -22,6 +22,7 @@ spec:
         - --v=4
         - --alsologtostderr
         - --mcp-server
+        - --mcp-listen=0.0.0.0:8080
         env:
         - name: GOOGLE_CLOUD_PROJECT
           value: "PROJECT_ID"
@@ -63,4 +64,7 @@ spec:
   ports:
   - port: 80
     targetPort: 8888
-    protocol: TCP 
+    protocol: TCP
+  - port: 8080
+    targetPort: 8080
+    protocol: TCP
