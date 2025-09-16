@@ -17,6 +17,10 @@ spec:
       - name: kubectl-ai
         image: us-central1-docker.pkg.dev/civil-epigram-471815-n0/gke/kubectl-ai:latest
         args:
+        - --ui-type=web
+        - --llm-provider=vertexai
+        - --v=4
+        - --alsologtostderr
         - --mcp-server
         env:
         - name: GOOGLE_CLOUD_PROJECT
@@ -59,7 +63,4 @@ spec:
   ports:
   - port: 80
     targetPort: 8888
-    protocol: TCP
-  - port: 8080
-    targetPort: 8080
-    protocol: TCP
+    protocol: TCP 
